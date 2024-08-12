@@ -1,0 +1,97 @@
+html{
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: url('./weatherImage.png'); 
+    background-size: cover; /* Ensures the image covers the entire body */
+    background-position: center; /* Centers the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 50rem;
+    border-radius: 20px;
+    padding: 60px 60px;
+}
+
+.input-container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.search-input{
+    background-color: rgb(255, 255, 255, 0.7);
+    width: 70%;
+    border-radius: 25px;
+    padding-left: 1.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+}
+.search-btn{
+    background-color: rgb(255, 255, 255, 0.7);
+    color: black;
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+}
+
+.weather-container{
+    display: none;
+}
+
+.weather-state{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+    font-size: 3rem;
+    padding: 1rem 2rem;
+    
+}
+
+.location{
+    font-size: 3.5rem;
+}
+
+.emoji{
+    height: 150px;
+}
+
+.additional-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.additional-details>div{
+    background-color: rgb(255, 255, 255, 0.7);
+    font-size: 1.3rem;
+    padding: 2rem 2rem;
+    border-radius: 10px;
+    width: 18rem;
+    text-align: center;
+}
+
+.error{
+    display: none;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    color: white;
+}
+
+
+
+
