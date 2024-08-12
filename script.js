@@ -21,7 +21,7 @@ searchBtn.addEventListener("click", async function(){
 });
 
 async function fetchWeather(location){
-    const url = `http://api.weatherapi.com/v1/current.json?key=1a0f4fc8e5a74f09b7e21652241008&q=${location}&aqi=no`;
+    const url = `https://api.weatherapi.com/v1/current.json?key=1a0f4fc8e5a74f09b7e21652241008&q=${location}&aqi=no`;
 
     const response = await fetch(url);
     if(response.status == 400){
