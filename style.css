@@ -15,8 +15,9 @@ body {
 .card{
     background-color: rgba(0, 0, 0, 0.6);
     width: 50rem;
+    max-width: 90%;
     border-radius: 20px;
-    padding: 60px 60px;
+    padding: 60px;
 }
 
 .input-container{
@@ -79,7 +80,7 @@ body {
     font-size: 1.3rem;
     padding: 2rem 2rem;
     border-radius: 10px;
-    width: 18rem;
+    width: 45%;
     text-align: center;
 }
 
