@@ -124,6 +124,11 @@ body {
         font-size: 0.9rem;
         padding: 1rem;
     }
+    .error {
+        font-size: 0.8rem;
+        padding-left: 0.5rem;
+        margin-left: 0.7rem;
+    }
 
 }
 
