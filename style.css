@@ -4,7 +4,7 @@ html{
 
 body {
     height: 100vh;
-    background-image: url('./weatherImage.png'); 
+    background-image: url('./weatherImage.jpg'); 
     background-size: cover; /* Ensures the image covers the entire body */
     background-position: center; /* Centers the image */
     display: flex;
