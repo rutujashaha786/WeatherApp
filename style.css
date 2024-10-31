@@ -4,14 +4,14 @@ html{
 
 body {
     height: 100vh;
-    background-image: url('./weatherImage.jpg'); 
+    background-image: url('./weatherImage.jpg'); /* Browser sends additional request to fetch image from server */
     background-size: cover; /* Ensures the image covers the entire body */
     background-position: center; /* Centers the image */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     color: rgba(0, 0, 0, 0.7);
 }
 
@@ -20,7 +20,7 @@ body {
     width: 50rem;
     max-width: 90%;
     border-radius: 20px;
-    padding: 50px;
+    padding: 40px;
 }
 
 .input-container{
@@ -82,7 +82,7 @@ body {
 .additional-details>div{
     background-color: rgb(255, 255, 255, 0.7);
     font-size: 1.3rem;
-    padding: 2rem 2rem;
+    padding: 1.5rem;
     border-radius: 10px;
     width: 50%;
     text-align: center;
@@ -103,6 +103,9 @@ body {
 
 /* For mobile devices */
 @media (max-width: 480px) {
+    body{
+        gap: 1rem;
+    }
     .card {
         padding: 20px;
     }
@@ -134,6 +137,10 @@ body {
 
 /* Style adjustments specifically for Nest Hub */
 @media (max-width: 1024px) and (max-height: 600px) {
+    body {
+        gap: 1rem;
+    }
+
     .card {
         padding: 20px;
     }
@@ -141,10 +148,15 @@ body {
     .weather-state {
         font-size: 2rem; 
         gap: 1.5rem;
+        padding: 0.8rem
     }
 
     .location {
         font-size: 2.5rem;
+    }
+
+    .emoji {
+        height: 90px;
     }
 
     .additional-details > div {
