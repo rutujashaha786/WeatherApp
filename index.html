@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherApp</title>
+    <link rel="preload" href="./weatherImage.png" as="image">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
 </head>
 <body>
+    <h1>Weather App</h1>
     <div class="card">
         <div class="input-container">
             <input type="text" class="search-input" placeholder="Enter Location">
             <button class="search-btn" id="search">Search</button>
         </div>
 
-        <div class="error">Invalid location!!</div>
+        <div class="error">Please enter correct location!!</div>
 
         <div class="weather-container">           
             <div class="weather-state">
@@ -30,7 +32,7 @@
                     <span class="humidity-val">64%</span>
                 </div>
                 <div class="windSpeed-container">
-                    <span>Wind Speed:</span>
+                    <span>Wind:</span>
                     <span class="wind-speed-val">20kph</span>
                 </div>
             </div>

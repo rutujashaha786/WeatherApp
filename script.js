@@ -3,22 +3,30 @@ const searchInput = document.querySelector(".search-input");
 const weatherElement = document.querySelector(".weather-container");
 const errorElement = document.querySelector(".error");
 
-searchBtn.addEventListener("click", async function(){
+const weatherHandler = async function(){
     const locationVal = searchInput.value;
-    if(locationVal){
-       const data = await fetchWeather(locationVal);
 
-       if(data){
-          updateDOM(data);
-          errorElement.style.display="none";
-          weatherElement.style.display="block";
-       }else{
-          errorElement.style.display="block";
-          weatherElement.style.display="none";
-       }
-       searchInput.value = "";
+    if(!locationVal){
+        errorElement.style.display="block";
+        weatherElement.style.display="none";
+        return;
     }
-});
+
+    const data = await fetchWeather(locationVal);
+
+    if(data){
+        updateDOM(data);
+        errorElement.style.display="none";
+        weatherElement.style.display="block";
+    }else{
+        errorElement.style.display="block";
+        weatherElement.style.display="none";
+    }
+    searchInput.value = ""; 
+ 
+}
+
+searchBtn.addEventListener("click", weatherHandler);
 
 async function fetchWeather(location){
     const url = `https://api.weatherapi.com/v1/current.json?key=1a0f4fc8e5a74f09b7e21652241008&q=${location}&aqi=no`;
@@ -56,3 +64,14 @@ function updateDOM(data){
     humidityElem.innerText = humidity + "%";
     windSpeedElem.innerText = windSpeed + " kph";
 }
+
+/********* keyboard support ***************/
+const body = document.querySelector("body");
+// keyboard inputs
+body.addEventListener("keydown", function (e) {
+    if (!searchInput.value) return;
+    if (e.code == "Enter") {
+        e.preventDefault();
+        weatherHandler();
+    }
+})
