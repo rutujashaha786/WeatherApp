@@ -31,14 +31,22 @@ searchBtn.addEventListener("click", weatherHandler);
 async function fetchWeather(location){
     const url = `https://api.weatherapi.com/v1/current.json?key=1a0f4fc8e5a74f09b7e21652241008&q=${location}&aqi=no`;
 
-    const response = await fetch(url);
-    if(response.status == 400){
+    try{
+        const response = await fetch(url);
+        if(response.status == 400){
+            return null;
+        }
+        else{
+            const jsonData = await response.json();
+            return jsonData;
+        }
+    }
+    catch(error){
+        errorElement.textContent = "Something went wrong, please try again later!"
+        console.error("Error occurred:", error);
         return null;
     }
-    else{
-        const jsonData = await response.json();
-        return jsonData;
-    }
+
 }
 
 const temperatureElem = document.querySelector(".temperature");
