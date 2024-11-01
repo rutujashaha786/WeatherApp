@@ -7,6 +7,7 @@ const weatherHandler = async function(){
     const locationVal = searchInput.value;
 
     if(!locationVal){
+        errorElement.textContent = "Location is required!";
         errorElement.style.display="block";
         weatherElement.style.display="none";
         return;
@@ -34,8 +35,14 @@ async function fetchWeather(location){
     try{
         const response = await fetch(url);
         if(response.status == 400){
+            errorElement.textContent = "Invalid location entered!";
             return null;
         }
+        else if (!response.ok) {
+            // Handle other errors
+            errorElement.textContent = "Unable to fetch weather data. Please try again later!";
+            return null;
+        } 
         else{
             const jsonData = await response.json();
             return jsonData;
