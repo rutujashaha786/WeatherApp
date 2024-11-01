@@ -35,7 +35,7 @@ async function fetchWeather(location){
     try{
         const response = await fetch(url);
         if(response.status == 400){
-            errorElement.textContent = "Invalid location entered!";
+            errorElement.textContent = "Please enter correct location!";
             return null;
         }
         else if (!response.ok) {
