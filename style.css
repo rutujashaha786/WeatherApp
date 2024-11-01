@@ -58,7 +58,7 @@ body {
     align-items: center;
     gap: 2rem;
     color: white;
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 1rem 2rem;
     text-align: center;
 }
@@ -114,7 +114,7 @@ body {
         padding: 0.7rem;
     }
     .weather-state {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         gap: 1.5rem;
     }
     .location {
@@ -147,7 +147,7 @@ body {
     }
 
     .weather-state {
-        font-size: 2rem; 
+        font-size: 1.8rem; 
         gap: 1.5rem;
         padding: 0.8rem
     }
