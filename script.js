@@ -34,19 +34,14 @@ async function fetchWeather(location){
 
     try{
         const response = await fetch(url);
-        if(response.status == 400){
-            errorElement.textContent = "Please enter correct location!";
+        if (!response.ok) {
+            errorElement.textContent = response.status == 400 
+                ? "Please enter a correct location!" 
+                : "Unable to fetch weather data. Please try again later!";
             return null;
         }
-        else if (!response.ok) {
-            // Handle other errors
-            errorElement.textContent = "Unable to fetch weather data. Please try again later!";
-            return null;
-        } 
-        else{
-            const jsonData = await response.json();
-            return jsonData;
-        }
+        const jsonData = await response.json();
+        return jsonData;
     }
     catch(error){
         errorElement.textContent = "Something went wrong, please try again later!"
@@ -90,3 +85,12 @@ body.addEventListener("keydown", function (e) {
         weatherHandler();
     }
 })
+
+//For mobile devices
+searchInput.addEventListener("keyup", function (e) {
+    if (!searchInput.value) return;
+    if (e.key === "Enter") {
+        e.preventDefault();
+        weatherHandler();
+    }
+});
