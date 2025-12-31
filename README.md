@@ -2,6 +2,9 @@
 
 This Weather App allows you to check the current weather for any city or location. It fetches real-time data from WeatherAPI and displays temperature, weather conditions, humidity and wind speed in a clean, responsive interface.
 
+## 🔗 Demo
+[🎥 Walkthrough](https://drive.google.com/file/d/140cQo5bSHXerF-6G0Qqqimt3jx8R0pJN/view?usp=sharing ) | [🌐 Live Demo](https://rutujashaha786.github.io/WeatherApp/ )
+
 ## Features
 - Search weather by city or location.
 - Display current temperature in Celsius.
